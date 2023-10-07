@@ -1,6 +1,8 @@
 /*Programmer: Mohammad Afeef
 Contains all the functions to
-controll the bot in different dirctions
+controll the bot in different 
+dirctions using bluetooth with
+mobile phone.
 */
 
 //MOTOR_A PINS
@@ -94,9 +96,26 @@ void setup() {
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
 
+  //Serial begin to recive from BT module 
+  Serial.begin(9600);
+
 }
 
 void loop() {
 
- 
+  if(Serial.available()>0){
+    char info = Serial.read();
+    switch(info){
+      case '1': front();
+                break;
+      case '2': back();
+                break;
+      case '3': right();
+                break;
+      case '4': left();
+                break; 
+      default : stop();                                       
+    }
+  }
+
 }
