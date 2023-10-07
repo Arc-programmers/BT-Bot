@@ -3,10 +3,12 @@ Contains all the functions to
 controll the bot in different dirctions
 */
 
-//MOTOR1 PINS
+//MOTOR_A PINS
 int ena = 5;
 int in1 = 6;
 int in2 = 7;
+
+//MOTOR_B PINS
 int in3 = 8;
 int in4 = 9;
 int enb = 10;
