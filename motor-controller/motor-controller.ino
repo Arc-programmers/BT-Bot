@@ -10,8 +10,8 @@ int in1 = 6;
 int in2 = 7;
 
 //MOTOR_B PINS
+int in3 = 8;
 int in4 = 9;
-int enb = 10;
 
 //controll unit
 int duration = 250;//The function will execute for more time after the signal is stoped.
