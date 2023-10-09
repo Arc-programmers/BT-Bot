@@ -15,7 +15,7 @@ int in3 = 8;
 int in4 = 9;
 int enb = 10;
 
-//Speed controll unit
+//controll unit
 int maxSpeed = 255;//The maximum PWM value to run the motor
 int duration = 250;//The function will execute for more time after the signal is stoped.
 
