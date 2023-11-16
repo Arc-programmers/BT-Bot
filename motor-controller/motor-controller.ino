@@ -14,8 +14,8 @@ int in3 = 8;
 int in4 = 9;
 
 //controll unit
-int duration = 250;//The function will execute for more time after the signal is stoped.
-
+int durationX = 40;//The function will execute for more time after the signal is stoped.
+int durationY = 150;//The function will execute for more time after the signal is stoped.
 //Directional functions
 
 void front(){
@@ -27,7 +27,7 @@ void front(){
   digitalWrite(in3,LOW);
   digitalWrite(in4,HIGH);
 
-  delay(duration);
+  delay(durationY);
 }
 
 void back(){
@@ -39,7 +39,7 @@ void back(){
   digitalWrite(in3,HIGH);
   digitalWrite(in4,LOW);
 
-  delay(duration);
+  delay(durationY);
 }
 
 void left(){
@@ -51,7 +51,7 @@ void left(){
   digitalWrite(in3,HIGH);
   digitalWrite(in4,LOW);
 
-  delay(duration);
+  delay(durationX);
 }
 
 void right(){
@@ -63,7 +63,7 @@ void right(){
   digitalWrite(in3,LOW);
   digitalWrite(in4,HIGH);
 
-  delay(duration);
+  delay(durationX);
 }
 
 void stop(){
@@ -72,7 +72,7 @@ void stop(){
   digitalWrite(in2,LOW);
   digitalWrite(in3,LOW);
   digitalWrite(in4,LOW);
-  delay(duration);
+  delay(durationX);
 }
 
 void setup() {
@@ -92,6 +92,7 @@ void loop() {
 
   if(Serial.available()>0){
     char info = Serial.read();
+    Serial.println(info);
     switch(info){
       case '1': front();
                 break;
